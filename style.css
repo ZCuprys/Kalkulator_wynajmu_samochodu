@@ -1,0 +1,114 @@
+body {
+    background: linear-gradient(to right, #fc5c7d, #6a82fb);
+    /*background: linear-gradient(to right, #0f0c29, #302b63, #24243e); lawendowy ciemny motyw*/
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: block;
+    background: white;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#powitanie {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    margin-top: 50px;
+    margin-right: 50px;
+    text-align: left;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: #743c85;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.container select {
+    font-size: 15px;
+    width: 96%;
+}
+
+#dniWynajmu {
+    margin-bottom: 20px;
+}
+
+button {
+    position: relative;
+    padding: 20px;
+    border: none;
+    width: 90%;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: white;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right, #fc5c7d, #6a82fb);
+    z-index: -1;
+    transition: left 0.3s;
+}
+
+button:hover::before {
+    left: 0;
+}
+
+button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.error-message {
+    color: red;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.wyniki {
+    background: transparent;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.wyniki p {
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}

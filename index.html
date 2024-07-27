@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Kalkulator wynajmu samochodów</title>
+</head>
+<body>
+    <h1 id="powitanie">Witaj, <br> Zapraszamy Cię <br> na wspólną podróż!</h1>
+        <div class="container">
+            <h2>Kalkulator <br> Wynajmu Samochodu</h2>
+            
+                <form id="formularzWynajmu">
+                    <label for="kilometry"></label>
+                    <input type="number" placeholder="Szacunkowa ilość kilometrów do przejechania" id="kilometry" name="kilometry" required>
+                    <div class="error-message" id="kilometryError"></div>
+
+                    <label for="rokPrawaJazdy"></label>
+                    <input type="number" placeholder="Rok otrzymania prawa jazdy" id="rokPrawaJazdy" name="rokPrawaJazdy" required>
+                    <div class="error-message" id="rokPrawaJazdyError"></div>
+
+                    <label for="dniWynajmu"></label>
+                    <input type="number" placeholder="Ilość dni wynajmu" id="dniWynajmu" name="dniWynajmu" required>
+                    <div class="error-message" id="dniWynajmuError"></div>
+
+                    <label for="miasto">Miasto:</label>
+                    <select id="miasto" name="miasto" onchange="wybieranieModelu()" required>
+                        <option value="Rzeszów">Rzeszów</option>
+                        <option value="Warszawa">Warszawa</option>
+                        <option value="Wrocław">Wrocław</option>
+                        <option value="Gdańsk">Gdańsk</option>
+                    </select>
+                    <div class="error-message" id="miastoError"></div>
+
+                    <label for="kategoriaSamochodu">Kategoria samochodu:</label>
+                    <select id="kategoriaSamochodu" name="kategoriaSamochodu" onchange="wybieranieModelu()" required>
+                        <option value="Basic">Basic</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                    <div class="error-message" id="kategoriaSamochoduError"></div>
+
+                    <label for="modelSamochodu">Model samochodu:</label>
+                    <select id="modelSamochodu" name="modelSamochodu" onchange="czyDostępny()" required></select>
+                    <div class="error-message" id="modelSamochoduError"></div>
+
+                    <div id="carAvailabilityContainer">
+                        <label for="dostępnośćSamochodu">Dostępność modeli:</label>
+                        <input type="number" id="dostępnośćSamochodu" name="dostępnośćSamochodu" readonly>
+                    </div>
+
+                    <button type="button" onclick="walidacjaFormularza()">Oblicz</button>
+                </form>
+
+    <div class="wyniki">
+        <p id="paliwo"></p>
+        <p id="kosztCałkowity"></p>
+        <p id="kosztNetto"></p>
+        <p id="kosztBrutto"></p>
+    </div>
+   
+</body>
+</html>
